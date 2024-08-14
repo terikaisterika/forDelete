@@ -1,8 +1,11 @@
 const app = require('express')();
-
+const path = __dirname;
 const host = '127.0.0.1';
-const port = 7000;
+const port = 4000;
 
+app.get('/', (req, res)=>{
+  res.sendFile(path + '/index.html')
+})
 app.get('/home', (req, res) => {
   res.status(200).type('text/plain');
   res.send('Home page');
